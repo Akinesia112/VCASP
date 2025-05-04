@@ -1,0 +1,40 @@
+# simulation_params.yaml
+
+# Detailed Simulation Settings
+
+# Weather and Environment
+weather:
+  cloudiness: 10.0
+  precipitation: 0.0
+  precipitation_deposits: 0.0
+  wind_intensity: 0.0
+  sun_azimuth_angle: 0.0
+  sun_altitude_angle: 45.0
+  fog_density: 0.0
+  fog_distance: 0.0
+  wetness: 0.0
+  native_carla_weather: false # Use default CARLA weather presets instead of these values
+
+# Traffic Manager Settings (for NPC vehicles)
+traffic_manager:
+  mode: "realistic" # "synchronous", "realistic"
+  global_distance_to_leading_vehicle: 2.5 # meters
+  random_drive_city_density: 0.2 # Proportion of vehicles that will wander around the city
+  random_left_and_right_lane_change_percentage: 10 # % of vehicles doing random lane changes
+  synchronized_traffic: true # Whether Traffic Manager ticks with the world tick
+
+# Sensor Specific Parameters (can also be in system_config)
+# Overrides or additions to system_config sensor settings
+# Example:
+# lidar:
+#   noise_stddev: 0.05 # Standard deviation of noise added to Lidar points
+
+# Route Following (for Ego or NPCs if not controlled by your stack)
+# Example: Define specific routes by index
+# route_to_follow_ego: 0 # Index of the route in simulation/config/routes/
+
+# Simulation rendering options
+rendering:
+  show_triggers: false
+  show_debug_points: false
+  show_collision_detection: false

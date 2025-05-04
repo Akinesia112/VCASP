@@ -1,0 +1,6 @@
+carla==0.9.13
+pyyaml
+numpy
+scipy  # For potential advanced smoothing or geometry calculations
+# filterpy # For Kalman Filter (if using the filterpy library)
+# Add other required libraries for specific sensor processing or V2X parsing if used

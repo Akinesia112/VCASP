@@ -1,0 +1,125 @@
+# system_config.yaml
+
+# CARLA Simulation Settings
+carla:
+  host: 127.0.0.1
+  port: 2000
+  timeout: 10.0 # seconds
+  map: Town03 # Default map
+
+# Ego Vehicle Settings
+ego_vehicle:
+  model: vehicle.audi.a2
+  spawn_point_index: 1 # Example spawn point index
+
+# Simulation Parameters
+simulation:
+  run_duration_seconds: 300 # Example: Run for 300 seconds
+  carla_delta_seconds: 0.05 # Simulation time step
+  synchronous_mode: true
+  # Number of random traffic actors (used if scenario type is 'random')
+  num_traffic_vehicles: 3
+  num_traffic_pedestrians: 3
+
+  # Scenario Configuration
+  scenario:
+    type: "convoy" # Options: "convoy", "random"
+    convoy:
+      num_members: 4 # Number of convoy vehicles besides ego (total 5 vehicles in the fleet)
+      # Relative formation offsets from the ego vehicle's spawn point (x: forward, y: left, z: up)
+      formation:
+        - x_offset: -5.0 # 5 meters behind ego
+          y_offset: 0.0
+          z_offset: 0.2 # Small vertical offset to avoid ground collision
+          yaw_offset: 0.0 # Same yaw as ego
+        - x_offset: -10.0 # 10 meters behind ego
+          y_offset: 0.0
+          z_offset: 0.2
+          yaw_offset: 0.0
+        - x_offset: -15.0 # 15 meters behind ego
+          y_offset: 0.0
+          z_offset: 0.2
+          yaw_offset: 0.0
+        - x_offset: -20.0 # 20 meters behind ego
+          y_offset: 0.0
+          z_offset: 0.2
+          yaw_offset: 0.0
+    random: # Configuration for random scenario (used if type is 'random')
+      # num_traffic_vehicles and num_traffic_pedestrians from main simulation section will be used
+      pass # Add other random scenario specific config here if needed
+
+
+# Module Enable/Disable
+modules:
+  perception: true
+  v2x_handler: true
+  fusion: true
+  ldm_manager: true
+  planning: true
+  control: true
+  ota_updater: true # Enable/Disable OTA map updates simulation
+
+# Perception Module Settings
+perception:
+  sensors:
+    camera:
+      enabled: false # Example: disable camera for simplicity
+    lidar:
+      enabled: true
+      type: sensor.lidar.ray_cast
+      range: 50.0
+      points_per_second: 100000
+      channels: 32
+      rotation_frequency: 20
+      upper_fov: 15.0
+      lower_fov: -25.0
+      # relative_location: [x, y, z] # Example: [0.0, 0.0, 2.0]
+    radar:
+      enabled: true
+      type: sensor.other.radar
+      horizontal_fov: 30.0
+      vertical_fov: 10.0
+      range: 100.0
+      points_per_second: 1500 # Radar "detections" per second
+      # relative_location: [x, y, z] # Example: [0.0, 0.0, 1.0]
+  v2x:
+    listening_port: 6000 # UDP port to listen for simulated V2X messages
+    message_types: ["CAM", "DENM"] # Supported V2X message types
+  ldm_manager:            
+    update_rate_hz: 10    # Update rate for LDM manager (Hz)
+    max_objects: 10       # Maximum number of objects to track
+
+# Fusion Module Settings
+fusion:
+  sync_time_window_sec: 0.1
+  fusion_algorithm: "kalman_tracker" # or "geometric_associator"
+  data_association_threshold: 2.0 # Distance threshold for association
+
+# Planning Module Settings
+planning:
+  planner_type: "hybrid_a_star" # "a_star", "hybrid_a_star", "rrt_star"
+  state_search:
+    grid_resolution: 0.5 # Meters per grid cell
+    orientation_bins: 16 # Number of discrete orientation bins for Hybrid A*
+    # ... other planner specific parameters
+  replan_threshold: 5.0 # Distance threshold to trigger replanning (meters)
+  replan_time_threshold: 1.0 # Time threshold to trigger replanning (seconds)
+
+# Control Module Settings
+control:
+  controller_type: "pure_pursuit" # "pid", "pure_pursuit"
+  # ... controller specific parameters
+
+# Maps Module Settings
+maps:
+  static_map_path: "maps/map_data/carla_maps/Town03.xodr" # Path to static map file
+  nds_live_tiles_path: "maps/map_data/nds_live_tiles/" # Path to simulated NDS.Live tiles
+  ota_update:
+    enabled: true
+    update_interval_seconds: 60 # Simulate map update check interval
+    simulated_server_url: "http://localhost:8080/map_updates" # Simulated server endpoint
+
+# Logging Settings
+logging:
+  level: INFO # DEBUG, INFO, WARNING, ERROR
+  output_file: "simulation.log"
