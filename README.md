@@ -134,7 +134,7 @@ The simulation should connect to CARLA, set up the environment, and start runnin
 * **Improve collision checking:** Implement detailed geometry-based collision detection in `utils/geometry_utils.py` and integrate it into the planner's cost functions.
 * **Create specific routes:** Define detailed routes in `simulation/config/routes/`.
 
-## ✅ Future Works:
+## ✅ Future Works: Cloud-Integrated and ROS2-based Vehicle Platforms with CI/CD
 
 ### 🕹️ Control
 - [ ] `mpc_controller` – Implement model predictive control logic
