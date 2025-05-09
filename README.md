@@ -134,7 +134,7 @@ The simulation should connect to CARLA, set up the environment, and start runnin
 * **Improve collision checking:** Implement detailed geometry-based collision detection in `utils/geometry_utils.py` and integrate it into the planner's cost functions.
 * **Create specific routes:** Define detailed routes in `simulation/config/routes/`.
 
-## ✅ Todo
+## ✅ Future Works:
 
 ### 🕹️ Control
 - [ ] `mpc_controller` – Implement model predictive control logic
@@ -152,17 +152,20 @@ The simulation should connect to CARLA, set up the environment, and start runnin
 - [ ] `ota_manager` – Over-the-air (OTA) update manager
 - [ ] `data_streaming` – Real-time telemetry and data logging to the cloud
 
-
 ### 🔁 CI/CD
 - [ ] `github-actions` – Workflow setup for linting, testing, and deployment
 - [ ] `jenkins` – Optional pipeline for full build + integration test on self-hosted runner
 
 ### 🧪 Experiments
 - [ ] Analysis_notebooks
+
     │──── ota_results_analysis.ipynb
+
     │──── container_latency_analysis.ipynb
+
     │──── streaming_scalability_analysis.ipynb
-- [ ] Design reproducible experiment setup
+
+- [ ] Design a reproducible experiment setup
 - [ ] Log performance metrics (latency, accuracy)
 - [ ] Compare MPC with baseline PID
 - [ ] OTA_Update_Robustness
