@@ -108,6 +108,7 @@ The project is organized into the following main directories:
 
 ## Setup and Installation
 
+0. Run in Windows 11 System.
 1. **Install CARLA:** Follow the official CARLA documentation to download and install the simulator (version 0.9.13 is used in `requirements.txt`).
 2. **Launch CARLA Server:** Start the CARLA simulator server.
 3. **Clone Repository:** Clone this project repository.
