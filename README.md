@@ -13,12 +13,12 @@ The system integrates sensor data (simulated Lidar, Radar, Camera) and V2X messa
     <td align="center">
       <img src="assets/multi-vehicle%20fleet.png" width="100%" alt="Multi-Vehicle Fleet">
       <br>
-      # Multi-Vehicle Fleet Scenario
+      Multi-Vehicle Fleet Scenario
     </td>
     <td align="center">
       <img src="assets/single%20vehicle.png" width="100%" alt="Single Vehicle">
       <br>
-      # Single Vehicle Scenario
+      Single Vehicle Scenario
     </td>
   </tr>
 </table>
