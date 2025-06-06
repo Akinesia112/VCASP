@@ -114,8 +114,23 @@ The project is organized into the following main directories:
 ## Running the Simulation
 
 1. Ensure the CARLA simulator server is running.
-2. Navigate to the project root directory in your terminal.
-3. Run the main simulation script:
+   ```bash
+   # CMD
+   cd D:\CARLA_0.9.13\WindowsNoEditor #CarlaUE4.exe location
+   .\CarlaUE4.exe # Make sure CARLA is fully loaded.
+
+   # Powershell
+   cd D:\NTU Courses\Introduction to Intelligent Vehicles\VCASP # main.py location
+   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass # First, temporarily allow the execution of PowerShell scripts
+   .\venv_py37_carla\Scripts\Activate.ps1 # Activate (venv_py37_carla) environment
+   python main_simulation_loop.py                       
+
+   # Debug: Port default 2000
+   C:\Windows\System32\netstat.exe -ano | Select-String ":2000" #Check if port 2000 is in LISTEN
+   Test-NetConnection -ComputerName 127.0.0.1 -Port 2000  # TcpTestSucceeded : True 
+   ```
+3. Navigate to the project root directory in your terminal.
+4. Run the main simulation script:
 
     ```bash
     python main_simulation_loop.py
