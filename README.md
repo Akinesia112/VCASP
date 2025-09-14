@@ -2,7 +2,9 @@
 
 ## Project Overview
 
-This project implements a modular architecture for an advanced driver-assistance system (ADAS) with a focus on V2X communication integration, data fusion, and state-search based path planning within the CARLA simulation environment.
+This project is a CARLA-based, modular ADAS research platform that fuses LiDAR, radar, camera, and V2X (CAM/DENM) into a Local Dynamic Map to drive a Hybrid-A* planner with dynamic replanning and OTA HD-map updates, safeguarded by Byzantine-resilient filtering and tuned via Pareto-frontier analysis.
+
+We implemented a modular architecture for an advanced driver-assistance system (ADAS) with a focus on V2X communication integration, data fusion, and state-search based path planning within the CARLA simulation environment.
 
 The system integrates sensor data (simulated Lidar, Radar, Camera) and V2X messages (simulated CAM, DENM) in a fusion layer to build a Local Dynamic Map (LDM). The LDM, along with static map data and vehicle state, is used by a state-search planner (Hybrid A*) to generate safe and efficient trajectories. A control module follows the planned trajectory, and a replanning manager triggers new planning cycles based on dynamic environmental changes or V2X events. The project also includes a simulation of Over-The-Air (OTA) map updates.
 
