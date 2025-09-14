@@ -1,4 +1,4 @@
-# VCASP: Carla-based V2X Data Fusion and State Search Planning System with OTA Updates
+# KOSOKU: Carla-based V2X Data Fusion and State Search Planning System with OTA Updates
 
 ## Project Overview
 
@@ -36,7 +36,7 @@ The project is organized into the following main directories:
 * `config/`: Stores system-wide and module-specific configuration files.
 
     ```plaintext
-    VCASP/
+    KOSOKU/
     │
     ├── simulation/                   # Interactive interface with the CARLA simulation environment
     │   ├── carla_bridge/             # CARLA Python API interface and actor/sensor management
@@ -138,7 +138,7 @@ The project is organized into the following main directories:
    .\CarlaUE4.exe # Make sure CARLA is fully loaded.
 
    # Powershell
-   cd D:\NTU Courses\Introduction to Intelligent Vehicles\VCASP # main.py location
+   cd D:\NTU Courses\Introduction to Intelligent Vehicles\KOSOKU # main.py location
    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass # First, temporarily allow the execution of PowerShell scripts
    .\venv_py37_carla\Scripts\Activate.ps1 # Activate (venv_py37_carla) environment
    python main_simulation_loop.py                       
