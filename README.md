@@ -1,4 +1,4 @@
-# KOSOKU: Carla-based V2X Data Fusion and State Search Planning System with OTA Updates
+# KOSOKU: Kinetic Optimal Simulation for OTA Knowledge Updates in Digital-Twin ADAS with V2X-Sensor Fusion and Resilient Planning
 
 ## Project Overview
 
